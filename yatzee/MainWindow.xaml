@@ -1,0 +1,77 @@
+﻿<Window x:Class="yatzee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:yatzee"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="538" Width="854">
+    <Grid x:Name="gridGlobal">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="475*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="diceTextOne" HorizontalAlignment="Left" Height="45" Margin="21,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="24" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="diceTextTwo" HorizontalAlignment="Left" Height="41" Margin="21,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="24" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="checkFirstDice" Content="Trow it again?" HorizontalAlignment="Left" Margin="75,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.183,-0.4" Grid.ColumnSpan="3" Height="17" Width="113"/>
+        <TextBox x:Name="diceTextThree" HorizontalAlignment="Left" Height="39" Margin="21,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="24" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="diceTextFour" HorizontalAlignment="Left" Height="39" Margin="21,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontSize="24" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="diceTextFive" HorizontalAlignment="Left" Height="38" Margin="21,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" RenderTransformOrigin="0.52,-0.174" FontSize="24" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="checkSecondDice" Content="Trow it again?" HorizontalAlignment="Left" Margin="75,83,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="16" Width="113"/>
+        <CheckBox x:Name="checkThirdDice" Content="Trow it again?" HorizontalAlignment="Left" Margin="75,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.225,-0.867" Grid.ColumnSpan="3" Height="16" Width="113"/>
+        <CheckBox x:Name="checkFourthDice" Content="Trow it again?" HorizontalAlignment="Left" Margin="75,169,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="18" Width="113"/>
+        <CheckBox x:Name="checkFifthDice" Content="Trow it again?" HorizontalAlignment="Left" Margin="75,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.169,-1.933" Grid.ColumnSpan="3" Height="17" Width="113"/>
+        <Button x:Name="throwDices" Content="Throw!" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top" Width="178" Click="ThrowDices_Click" Height="121" Grid.ColumnSpan="3" FontSize="48"/>
+        <TextBox x:Name="timesLeft" HorizontalAlignment="Left" Height="36" Margin="38,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" Text="3" RenderTransformOrigin="5.533,-0.913" Grid.Column="2" FontSize="22"/>
+        <TextBox x:Name="results" HorizontalAlignment="Left" Height="482" Margin="90,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" Grid.Column="2" Grid.ColumnSpan="3"/>
+        <Label Content="Throws remaining:" HorizontalAlignment="Left" Margin="0,310,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="59" Width="147" FontSize="16"/>
+        <Label Content="Aces" HorizontalAlignment="Left" Margin="123,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.514,0.769" Width="44" Grid.Column="4"/>
+        <Label Content="Fours" HorizontalAlignment="Left" Margin="123,102,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.487,-0.192" Width="54" Grid.Column="4"/>
+        <Label Content="Threes" HorizontalAlignment="Left" Margin="123,80,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.6,-0.269" Width="48" Grid.Column="4"/>
+        <Label Content="Twos" HorizontalAlignment="Left" Margin="123,57,0,0" VerticalAlignment="Top" Width="44" Grid.Column="4"/>
+        <Label Content="Fives" HorizontalAlignment="Left" Margin="123,124,0,0" VerticalAlignment="Top" Width="48" Grid.Column="4"/>
+        <Label Content="SUBTOTAL" HorizontalAlignment="Left" Margin="123,210,0,0" VerticalAlignment="Top" Width="80" Grid.Column="4"/>
+        <Label Content="BUNUS" HorizontalAlignment="Left" Margin="123,191,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="Total Score" HorizontalAlignment="Left" Margin="123,168,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.536,0.385" Width="80" Grid.Column="4"/>
+        <Label Content="Pair" HorizontalAlignment="Left" Margin="123,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.167,2" Grid.Column="4"/>
+        <Label Content="Three of a kind" HorizontalAlignment="Left" Margin="123,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.684,-0.269" Grid.Column="4"/>
+        <Label Content="Full House" HorizontalAlignment="Left" Margin="123,338,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="Four of a kind" HorizontalAlignment="Left" Margin="123,318,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.789,2.423" Grid.Column="4"/>
+        <Label Content="Doble Pair" HorizontalAlignment="Left" Margin="123,270,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="Small Stright" HorizontalAlignment="Left" Margin="123,362,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.038" Grid.Column="4"/>
+        <Label Content="Yatzee" HorizontalAlignment="Left" Margin="123,426,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.644,0.667" Grid.Column="4"/>
+        <Label Content="Chance" HorizontalAlignment="Left" Margin="123,405,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="Big Straight" HorizontalAlignment="Left" Margin="123,382,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="TOTAL" HorizontalAlignment="Left" Margin="123,457,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.267,0.577" Grid.Column="4"/>
+        <TextBox x:Name="AcesPlayer1" HorizontalAlignment="Left" Height="20
+                 " Margin="229,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="1.895,0.826" IsReadOnlyCaretVisible="True" Grid.Column="4" MouseDoubleClick="AcesPlayer1_MouseDoubleClick" />
+        <Label Content="Player 1" HorizontalAlignment="Left" Margin="229,0,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="Player 2" HorizontalAlignment="Left" Margin="295,0,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="Player 3" HorizontalAlignment="Left" Margin="361,0,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="Player 4" HorizontalAlignment="Left" Margin="419,0,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <TextBox x:Name="totalScorePlayer1" HorizontalAlignment="Left" Height="20" Margin="229,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="2.825,6.85" Grid.Column="4"/>
+        <TextBox x:Name="sixesPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Grid.Column="4" MouseDoubleClick="SixesPlayer1_MouseDoubleClick"/>
+        <TextBox x:Name="subtotalPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="2.508,6.15" Grid.Column="4"/>
+        <TextBox x:Name="threesPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.342,0.043" Grid.Column="4" MouseDoubleClick="ThreesPlayer1_MouseDoubleClick"/>
+        <TextBox x:Name="twosPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Grid.Column="4" MouseDoubleClick="TwosPlayer1_MouseDoubleClick" />
+        <TextBox x:Name="foursPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Grid.Column="4" MouseDoubleClick="FoursPlayer1_MouseDoubleClick" />
+        <TextBox x:Name="fivesPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.442,0.9" Grid.Column="4" MouseDoubleClick="FivesPlayer1_MouseDoubleClick" />
+        <TextBox x:Name="bonusPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.564,1.35" Grid.Column="4"/>
+        <Label Content="Sixes" HorizontalAlignment="Left" Margin="123,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,0.962" Width="54" Grid.Column="4"/>
+        <TextBox x:Name="pairPlayer1" HorizontalAlignment="Left" Height="20                  " Margin="229,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="1.895,0.826" Grid.Column="4" MouseDoubleClick="PairPlayer1_MouseDoubleClick"/>
+        <TextBox x:Name="bigStrightPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="2.825,6.85" Grid.Column="4" MouseDoubleClick="BigStrightPlayer1_MouseDoubleClick" />
+        <TextBox x:Name="smallStrightPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Grid.Column="4" MouseDoubleClick="smallStrightPlayer1_MouseDoubleClick" />
+        <TextBox x:Name="yatzeePlayer1" HorizontalAlignment="Left" Height="20" Margin="229,426,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="2.508,6.15" Grid.Column="4" MouseDoubleClick="YatzeePlayer1_MouseDoubleClick"/>
+        <TextBox x:Name="threeKindPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.342,0.043" Grid.Column="4" MouseDoubleClick="ThreeKindPlayer1_MouseDoubleClick" />
+        <TextBox x:Name="doblePairPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Grid.Column="4" MouseDoubleClick="DoblePairPlayer1_MouseDoubleClick"/>
+        <TextBox x:Name="fourKindPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Grid.Column="4" MouseDoubleClick="FourKindPlayer1_MouseDoubleClick" />
+        <TextBox x:Name="fullHousePlayer1" HorizontalAlignment="Left" Height="20" Margin="229,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.442,0.9" Grid.Column="4" MouseDoubleClick="FullHousePlayer1_MouseDoubleClick" />
+        <TextBox x:Name="chancePlayer1" HorizontalAlignment="Left" Height="20" Margin="229,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="0.564,1.35" Grid.Column="4" MouseDoubleClick="ChancePlayer1_MouseDoubleClick" />
+        <TextBox x:Name="totalPlayer1" HorizontalAlignment="Left" Height="20" Margin="229,463,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="2.508,6.15" Grid.Column="4"/>
+        <Button x:Name="Restart" Content="Restart!" Grid.Column="4" HorizontalAlignment="Left" Margin="338,141,0,0" VerticalAlignment="Top" Width="75" Click="Restart_Click"/>
+
+    </Grid>
+</Window>
